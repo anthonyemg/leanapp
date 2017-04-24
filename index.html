@@ -4,9 +4,15 @@
     <title>Lean App</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
+  <body ng-app="leanapp">
     <h1>Lean App</h1>
-    <form></form>
-  <body>
+    <h3>Search calories / 1 gram of potein</h3>
+    <div ng-controller="SearchController">
+      <form>
+        <input type="text" placeholder="Type food here">
+        <button>Search food</button>
+      </form>
+    </div>
     <div ng-view></div>
     <script src="/node_modules/angular/angular.js"></script>
     <script src="app.js"></script>
