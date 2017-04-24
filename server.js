@@ -1,27 +1,26 @@
-var http = require("https");
+var express = require('express');
+var request = require('request');
+var keys = require('./config.js');
 
-var options = {
-  "method": "GET",
-  "hostname": "api.nutritionix.com",
-  "port": null,
-  "path": "/v1_1/search/cheddar%20cheese?fields=item_name%2Citem_id%2Cbrand_name%2Cnf_calories%2Cnf_total_fat&appId=96694618&appKey=10971dfc0b8f2b77be22430d29ca46a3",
-  "headers": {
-    "cache-control": "no-cache",
-    "postman-token": "c3b614cc-15a0-7397-add3-fd1108ee5c46"
-  }
-};
+var app = express();
 
-var req = http.request(options, function (res) {
-  var chunks = [];
+var search = 'cheese';
+// app.get('/', function (req, res) {
+//   res.sendfile('./index.html');
+// });
+//
+// app.get('*', function(req, res) {
+//   res.end('404');
+// });
 
-  res.on("data", function (chunk) {
-    chunks.push(chunk);
+app.get('/', function(req, res){
+  request('https://api.nutritionix.com/v1_1/search/' + search + '?fields=item_name%2Citem_id%2Cbrand_name%2Cnf_calories%2Cnf_total_fat&appId=' + keys.appId + '&appKey=' + keys.appKey, function (error, response, body) {
+  var data = JSON.parse(body)
+  res.end(data.hits[1].fields.nf_calories.toString());
   });
+})
 
-  res.on("end", function () {
-    var body = Buffer.concat(chunks);
-    console.log(body.toString());
-  });
-});
+app.listen(3000);
+console.log('Listening on port 3000');
 
-req.end();
+module.exports = app;
