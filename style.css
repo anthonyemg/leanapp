@@ -1,0 +1,12 @@
+h1 {
+  color: blue;
+}
+
+th {
+    text-align: left;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}

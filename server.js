@@ -14,9 +14,8 @@ app.get('/', function (req, res) {
 
 app.post('/', function(req, res){
   var food = req.body.data;
-  request('https://api.nutritionix.com/v1_1/search/' + food + '?fields=item_name%2Citem_id%2Cbrand_name%2Cnf_calories%2Cnf_total_fat&appId=' + keys.appId + '&appKey=' + keys.appKey, function (error, response, body) {
-  var data = JSON.parse(body)
-  res.end(data.hits[0].fields.item_name + ' : ' + data.hits[0].fields.nf_calories.toString());
+  request('https://api.nutritionix.com/v1_1/search/' + food + '?fields=item_name%2Citem_id%2Cbrand_name%2Cnf_calories%2Cnf_total_fat%2Cnf_protein&appId=' + keys.appId + '&appKey=' + keys.appKey, function (error, response, body) {
+  res.end(body);
   })
 });
 

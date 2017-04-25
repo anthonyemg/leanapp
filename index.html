@@ -2,6 +2,7 @@
 <html ng-app="app">
   <head>
     <title>Lean App</title>
+    <link rel="stylesheet" href="style.css">
     <script src="//opensource.keycdn.com/angularjs/1.6.2/angular.min.js"></script>
   </head>
   <body>
@@ -9,10 +10,49 @@
     <div ng-controller="Search">
       <input ng-model="food" placeholder="Type food here" />
       <button ng-click='searchFood()'>Find food</button>
-      <div>
-        {{data}}
-      </div>
+      <table>
+        <tr>
+          <th>Food</th>
+          <td>{{data.food}}</td>
+        </tr>
+        <tr>
+          <th>Protein</th>
+          <td>{{data.protein}}</td>
+        </tr>
+        <tr>
+          <th>Calories</th>
+          <td>{{data.calories}}</td>
+        </tr>
+        <tr>
+          <th>Cal/1g Protein</th>
+          <td>{{data.result}}</td>
+        </tr>
+
+
+
+
+      </table>
     </div>
     <script src="index.js"></script>
   </body>
 </html>
+
+
+<!-- <table>
+  <tr>
+    <th>Food</th>
+    <td>{{data.fields.item_name}}</td>
+  </tr>
+  <tr>
+    <th>Protein</th>
+    <td>{{data.fields.nf_protein}}</td>
+  </tr>
+  <tr>
+    <th>Calories</th>
+    <td>{{data.fields.nf_calories}}</td>
+  </tr>
+  <tr>
+    <th>Cal/1g Protein</th>
+    <td>{{data.fields.nf_calories / data.fields.nf_protein}}</td>
+  </tr>
+</table> -->
