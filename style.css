@@ -1,12 +1,15 @@
 h1 {
   color: blue;
-}
-
-th {
-    text-align: left;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 10px;
 }
 
 th, td {
     padding: 10px;
     text-align: left;
+}
+
+input {
+    margin: 10px;
 }

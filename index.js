@@ -23,6 +23,3 @@ var app = angular.module('app', [])
     });
   }
 }]);
-
-
-      // $scope.data = res.data.hits[0];
