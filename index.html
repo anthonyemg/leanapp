@@ -1,24 +1,18 @@
 <!DOCTYPE html>
 <html ng-app="app">
   <head>
-
     <title>Lean App</title>
     <script src="//opensource.keycdn.com/angularjs/1.6.2/angular.min.js"></script>
-
   </head>
   <body>
     <h1>Lean App</h1>
-
     <div ng-controller="Search">
       <input ng-model="food" placeholder="Type food here" />
       <button ng-click='searchFood()'>Find food</button>
-        {{food}}
       <div>
         {{data}}
       </div>
-
     </div>
-
     <script src="index.js"></script>
   </body>
 </html>

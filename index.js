@@ -1,11 +1,8 @@
 var app = angular.module('app', [])
 
 .controller('Search', ['$scope', '$http', function ($scope, $http) {
-
-  $scope.data = {};
-
+  $scope.data;
   $scope.searchFood = function() {
-
     $http({
       method: 'POST',
       url: 'http://localhost:3000',
