@@ -1,17 +1,19 @@
-// var http = require('https');
-var app = angular.module('myapp', [])
+var app = angular.module('app', [])
 
-.controller('Search', ['$scope', function ($scope, $http) {
+.controller('Search', ['$scope', '$http', function ($scope, $http) {
 
   $scope.data = {};
 
   $scope.searchFood = function() {
+
     $http({
       method: 'POST',
-      url: 'http://127.0.0.1:3000',
-      data: {}
-    }).then(function(response){
-      $scope.data = response;
+      url: 'http://localhost:3000',
+      headers: {'Content-type': 'application/json'},
+      data: {data: $scope.food}
+    }).then(function(res){
+      console.log('Response from API received: ', res)
+      $scope.data = res.data;
     });
   }
 }]);

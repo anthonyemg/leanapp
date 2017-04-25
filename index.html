@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="myapp">
+<html ng-app="app">
   <head>
 
     <title>Lean App</title>
@@ -11,7 +11,12 @@
 
     <div ng-controller="Search">
       <input ng-model="food" placeholder="Type food here" />
-      {{food}}
+      <button ng-click='searchFood()'>Find food</button>
+        {{food}}
+      <div>
+        {{data}}
+      </div>
+
     </div>
 
     <script src="index.js"></script>
