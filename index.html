@@ -1,26 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myapp">
   <head>
+
     <title>Lean App</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="//opensource.keycdn.com/angularjs/1.6.2/angular.min.js"></script>
+
   </head>
-
-  <body ng-app="">
-
+  <body>
     <h1>Lean App</h1>
-    <h3>Search calories / 1 gram of potein</h3>
-    <div ng-controller="">
-      <form>
-        <input type="text" placeholder="Type food here">
-        <button>Search food</button>
-      </form>
+
+    <div ng-controller="Search">
+      <input ng-model="food" placeholder="Type food here" />
+      {{food}}
     </div>
 
-    <!-- <div ng-view></div> -->
-
-    <script src="/node_modules/angular/angular.js"></script>
-    <script src="app.js"></script>
-    <script src="server.js"></script>
+    <script src="index.js"></script>
   </body>
-<html>
+</html>
