@@ -1,7 +1,8 @@
 var express = require('express');
 var request = require('request');
 var keys = require('./config.js');
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
+var db = require('./db.js');
 
 var app = express();
 
