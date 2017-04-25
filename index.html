@@ -25,20 +25,18 @@
         </tr>
         <tr>
           <th>Cal/1g Protein</th>
-          <td>{{data.result}}</td>
+          <td>{{data.ratio}}</td>
         </tr>
       </table>
     <h1>Recent searches</h1>
-      <table>
-        <tr>
-          <th>Food</th>
-          <th>cal / 1g protein</th>
-        </tr>
-        <tr>
-          <td>Chicken</td>
-          <td>9</td>
-        </tr>
-      </table>
+    <ol>
+       <li ng-repeat="food in recentSearches">
+         Food - {{food.foodName}}
+         Protein - {{food.protein}}
+         Calories - {{food.calories}}
+         Ratio - {{food.ratio}}
+       </li>
+    </ol>
     </div>
     <script src="index.js"></script>
   </body>
